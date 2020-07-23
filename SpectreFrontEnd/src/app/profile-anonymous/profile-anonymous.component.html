@@ -1,0 +1,42 @@
+<br>
+<br>
+<div>
+  <div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{users.image_url}}" class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{users.user_name}}</h5>
+          <p class="card-text"></p>
+          <p class="card-text"><small class="text-muted">{{users.score_comment_react}}</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <span class="navbar-brand mb-0 h1">Current Projects</span>
+    </nav>
+    <br>
+    <br>
+  </div>
+  <br>
+  <br>
+  <div *ngFor="let project of projects" class="card shadow p-3 mb-5 bg-white rounded" style="margin-bottom: 4%;">
+    <img src="{{project.image_url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <h5 class="card-title">{{project.user_name}}</h5>
+          <h5 class="text-left">{{project.current_fund}}/{{project.target_fund}}</h5>
+        </div>
+        <div class="col text-right">
+          <p class="card-text">Popularity {{project.score_comment_react}}</p>
+        </div>
+      </div>
+      <button [routerLink]="['/project-detail', project._id]" class=" float-right btn btn-primary">See Project</button>
+    </div>
+  </div>
+</div>
